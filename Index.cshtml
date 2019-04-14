@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div><img src="~/images/1.jpg" /></div>
+<table>
+    <tr>
+        <th>Список</th>
+        <th>Ссылка</th>
+    </tr>
+    <tr>
+        <td>Залы</td>
+        <td>@Html.ActionLink("Посмотреть", "GetRooms", "Main")</td>
+        <td>@Html.ActionLink("Добавить", "AddRoom", "Main")</td>
+    </tr>
+    <tr>
+        <td>Услуги</td>
+        <td>@Html.ActionLink("Посмотреть", "GetServiceTypes", "Main")</td>
+        <td>@Html.ActionLink("Ввести", "AddServiceType", "Main")</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Работники</td>
+        <td>@Html.ActionLink("Посмотреть", "GetEmployees", "Main")</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="/nav.html">In HTML</a></td>
+        <td></td>
+    </tr>
+</table>

@@ -1,0 +1,37 @@
+﻿@model List<lab1_ef.Employee>
+
+<div><img src="~/images/1.jpg" /></div>
+@using (Html.BeginForm())
+{
+    <h2>Работники</h2>
+    <div>
+        <ul>
+            <li><p>ID, Имя</p></li>
+            @foreach (var type in Model)
+            {
+                <li>
+                    <p>@type.EmployeeId, @type.Name</p>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+
+@{
+    lab1_ef.Employee empFromMemory = (lab1_ef.Employee)ViewData["empFromMemory"];
+    if (empFromMemory != null)
+    {
+        <div class="memory-item">
+            <h3>From memory cache:</h3>
+            <ul>
+                <li>
+                    ID: @empFromMemory.EmployeeId.ToString();
+                </li>
+                <li>
+                    Room No: @empFromMemory.Name?.ToString();
+                </li>
+            </ul>
+        </div>
+    }
+}

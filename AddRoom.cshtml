@@ -1,0 +1,18 @@
+﻿@model lab1_ef.Room
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Нет залов</label>
+        @Html.EditorFor(Model => Model.RoomNo)
+    </div>
+    <div>
+        <label>Вместимость</label>
+        @Html.EditorFor(Model => Model.Capacity)
+    </div>
+    <div>
+        <label>Прайс</label>
+        @Html.EditorFor(Model => Model.Cost)
+    </div>
+    <input type="submit" class="btn" value="Ввести" />
+}

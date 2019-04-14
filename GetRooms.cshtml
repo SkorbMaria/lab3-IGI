@@ -1,0 +1,64 @@
+﻿@model List<lab1_ef.Room>
+
+<div><img src="~/images/1.jpg" /></div>
+@using (Html.BeginForm())
+{
+    <h2>Залы</h2>
+    <div>
+        <ul>
+            <li><p>ID, Зал, Прайс</p></li>
+            @foreach (var room in Model)
+            {
+                <li>
+                    <p>@room.RoomId, @room.RoomNo, @room.Cost</p>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+@{
+    lab1_ef.Room roomSession = (lab1_ef.Room)ViewData["roomSession"];
+    if (roomSession != null)
+    {
+        <div class="session-item">
+            <h3>From session:</h3>
+            <ul>
+                <li>
+                    ID: @roomSession.RoomId.ToString();
+                </li>
+                <li>
+                    Room No: @roomSession.RoomNo.ToString();
+                </li>
+                <li>
+                    Capacity: @roomSession.Capacity.ToString();
+                </li>
+                <li>
+                    Cost: @roomSession.Cost.ToString();
+                </li>
+            </ul>
+        </div>
+    }
+
+    lab1_ef.Room roomFromMemory = (lab1_ef.Room)ViewData["roomFromMemory"];
+    if (roomFromMemory != null)
+    {
+        <div class="memory-item">
+            <h3>From memory cache:</h3>
+            <ul>
+                <li>
+                    ID: @roomFromMemory.RoomId.ToString();
+                </li>
+                <li>
+                    Room No: @roomFromMemory.RoomNo.ToString();
+                </li>
+                <li>
+                    Capacity: @roomFromMemory.Capacity.ToString();
+                </li>
+                <li>
+                    Cost: @roomFromMemory.Cost.ToString();
+                </li>
+            </ul>
+        </div>
+    }
+}

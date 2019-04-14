@@ -1,0 +1,18 @@
+﻿@model lab1_ef.ServiceType;
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Имя</label>
+        @Html.EditorFor(Model => Model.Name)
+    </div>
+    <div>
+        <label>Стоимость</label>
+        @Html.EditorFor(Model => Model.Cost)
+    </div>
+    <div>
+        <label>Описание</label>
+        @Html.EditorFor(Model => Model.Description)
+    </div>
+    <input type="submit" class="btn" value="Add" />
+}
